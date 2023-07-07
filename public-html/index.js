@@ -1,4 +1,5 @@
 const yx = L.latLng;
+var geo = null;
 
 function xy(x, y) {
 	if (Array.isArray(x)) { // When doing xy([x, y]);
@@ -34,6 +35,7 @@ xhr.addEventListener('load', function() {
 		console.log("Couldn't load GeoJSON");
 		return;
 	}
+	geo = xhr.response;
 	L.geoJSON(xhr.response, {
 		onEachFeature: function(feature, layer) {
 			if (feature == null || feature.geometry == null)
@@ -53,6 +55,35 @@ xhr.addEventListener('load', function() {
 			}
 		},
 	}).addTo(map);
+	ready();
 });
 xhr.send();
+
+// Check for parameters
+function ready() {
+	var url = new URL(document.location);
+	var params = url.searchParams;
+	let s = params.get('s');
+	if (s) {
+		for (i in geo.features) {
+			f = geo.features[i];
+			if (!'objectid' in f.properties) {
+				continue;
+			}
+			if (f.properties['objectid'] != s) {
+				continue;
+			}
+			coords = xy(f.geometry.coordinates);
+			var marker = L.marker(coords).addTo(map);
+			map.setView(coords, 1);
+			return;
+		}
+	}
+	let mp = params.get('marker');
+	if (mp) {
+		coords = xy(mp.split(','));
+		var marker = L.marker(coords).addTo(map);
+		map.setView(coords, 1);
+	}
+}
 

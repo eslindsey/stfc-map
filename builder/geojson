@@ -6,6 +6,8 @@ import loca
 import re
 from pathlib import Path
 
+mesh_scale = (0.25, 0.25)
+
 nodes = json.load(open('nodes.json', 'r'))
 systems = loca.load(open('systems.json', 'r'))
 galaxy = nodes['galaxy_optimised']
@@ -16,10 +18,7 @@ obj = {
     'features': []
 }
 
-min_x = None
-min_y = None
-max_x = None
-max_y = None
+gb = [[None, None], [None, None]]
 for i in range(0, len(galaxy['node_ids'])):
     node = str(galaxy['node_ids'][i])
     name = 'Unknown'
@@ -27,10 +26,10 @@ for i in range(0, len(galaxy['node_ids'])):
         name = systems.data[node]['title']
     x = galaxy['x_coords'][i]
     y = galaxy['y_coords'][i]
-    min_x = x if min_x is None else min(min_x, x)
-    max_x = x if max_x is None else max(max_x, x)
-    min_y = y if min_y is None else min(min_y, y)
-    max_y = y if max_y is None else max(max_y, y)
+    gb[0][0] = x if gb[0][0] is None else min(gb[0][0], x)
+    gb[0][1] = y if gb[0][1] is None else min(gb[0][1], y)
+    gb[1][0] = x if gb[1][0] is None else max(gb[1][0], x)
+    gb[1][1] = y if gb[1][1] is None else max(gb[1][1], y)
     obj['features'].append({
         'type': 'Feature',
         'properties': {
@@ -44,6 +43,7 @@ for i in range(0, len(galaxy['node_ids'])):
         },
     })
     coords[node] = [x, y]
+print(f"Galaxy bounds: ({gb[0][0]}, {gb[0][1]})-({gb[1][0]}, {gb[1][1]})", file=sys.stderr)
 
 for i in range(0, len(galaxy['source_ids'])):
     obj['features'].append({
@@ -58,8 +58,9 @@ for i in range(0, len(galaxy['source_ids'])):
         },
     })
 
+mb = [[None, None], [None, None]]
 start = len(obj['features'])
-p = Path('.')
+p = Path('obj')
 for fo in p.glob('*.obj'):
     print(f"Working on {fo}", file=sys.stderr)
     vertices = [(0, 0, 0)]
@@ -69,7 +70,13 @@ for fo in p.glob('*.obj'):
             if not match:
                 continue
             floats = [float(v) for v in match.groups()]
-            vertices.append([floats[0], floats[2]])
+            x = mesh_scale[0] * floats[0]
+            y = mesh_scale[1] * -floats[2]
+            vertices.append([x, y])
+            mb[0][0] = x if mb[0][0] is None else min(mb[0][0], x)
+            mb[0][1] = y if mb[0][1] is None else min(mb[0][1], y)
+            mb[1][0] = x if mb[1][0] is None else max(mb[1][0], x)
+            mb[1][1] = y if mb[1][1] is None else max(mb[1][1], y)
     print(f"Found {len(vertices)} vertices", file=sys.stderr)
     with fo.open('r') as f:
         for line in f:
@@ -91,7 +98,11 @@ for fo in p.glob('*.obj'):
                 },
             })
         print(f"Found {len(obj['features']) - start} faces", file=sys.stderr)
+    print(f"Mesh bounds: ({mb[0][0]}, {mb[0][1]})-({mb[1][0]}, {mb[1][1]})", file=sys.stderr)
+
+scale_x = float(gb[1][0] - gb[0][0]) / (mb[1][0] - mb[0][0])
+scale_y = float(gb[1][1] - gb[0][1]) / (mb[1][1] - mb[0][1])
+print(f"Scale: ({scale_x}, {scale_y})", file=sys.stderr)
 
 json.dump(obj, fp=sys.stdout, indent=2)
 print()
-print("Bounds: (", min_x, ",", min_y, ")-(", max_x, ",", max_y, ")", file=sys.stderr)
