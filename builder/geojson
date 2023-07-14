@@ -5,11 +5,12 @@ import json
 import loca
 import re
 from pathlib import Path
-
-def eprint(*args, **kwargs):
-    print(*args, file=sys.stderr, **kwargs)
+from eprint import eprint
 
 def transform(name, x, y, z):
+    if name == 'Rogue.obj':
+        return [x *  0.22534781079120067 +  623.9358100432041,
+                y * -0.22453135841922706 - 1059.4875167327712]
     return [x *  0.33953260812857690150522441401203 +  620.65061007976712362166120182265,
             y * -0.33837323271747048290964894533602 - 1056.58417176272120743560261062940]
 
@@ -68,14 +69,15 @@ colors = {
     'Romulan.obj':    '#00ff00',
     'Klingon.obj':    '#ff0000',
     'Augment.obj':    '#ffbb00',
+    'Rogue.obj':      '#ff00ff',
     'Dominion.obj':   '#8000ff',
 }
-mb = [[None, None], [None, None]]
 start = len(obj['features'])
 p = Path('obj')
 for fo in p.glob('*.obj'):
     eprint(f"Working on {fo}")
-    vertices = [(0, 0, 0)]
+    vertices = [(0, 0, 0)]  # OBJ files are 1-indexed, insert a dummy element
+    mb = [[None, None], [None, None]]
     with fo.open('r') as f:
         for line in f:
             match = re.match(r'v ([-0-9eE.]+) ([-0-9eE.]+) ([-0-9eE.]+)', line)

@@ -1,0 +1,58 @@
+#!/bin/python3
+
+import re
+import sys
+import argparse
+
+parser = argparse.ArgumentParser(
+    prog='objcalc',
+    description='Calculates transforms for OBJ files given map coordinates')
+parser.add_argument('-y', '--yisup', action='store_true', help='Do not invert the Y coordinate as is usually necessary')
+parser.add_argument('x1', type=float)
+parser.add_argument('y1', type=float)
+parser.add_argument('x2', type=float)
+parser.add_argument('y2', type=float)
+parser.add_argument('objfile', type=argparse.FileType('r'), default='-', help="OBJ file to read, defaults to STDIN")
+args = parser.parse_args()
+
+if args.x1 > args.x2:
+    temp = args.x1
+    args.x1 = args.x2
+    args.x2 = temp
+if args.y1 > args.y2:
+    temp = args.y1
+    args.y1 = args.y2
+    args.y2 = temp
+args.w1 = args.x2 - args.x1
+args.h1 = args.y2 - args.y1
+print(f"Goal: ({args.x1}, {args.y1})-({args.x2}, {args.y2}), dimensions: {args.w1} W, {args.h1} H")
+
+mb = [[None, None], [None, None], [None, None]]
+for line in args.objfile:
+    match = re.match(r'v ([-0-9eE.]+) ([-0-9eE.]+) ([-0-9eE.]+)', line)
+    if not match:
+        continue
+    (x, z, y) = [float(v) for v in match.groups()]
+    mb[0][0] = x if mb[0][0] is None else min(mb[0][0], x)
+    mb[0][1] = y if mb[0][1] is None else min(mb[0][1], y)
+    mb[1][0] = x if mb[1][0] is None else max(mb[1][0], x)
+    mb[1][1] = y if mb[1][1] is None else max(mb[1][1], y)
+mb[2][0] = mb[1][0] - mb[0][0]
+mb[2][1] = mb[1][1] - mb[0][1]
+print(f"Mesh: ({mb[0][0]}, {mb[0][1]})-({mb[1][0]}, {mb[1][1]}), dimensions {mb[2][0]} W, {mb[2][1]} H")
+
+scale_x = args.w1 / mb[2][0]
+scale_y = args.h1 / mb[2][1]
+
+bottom = mb[0][1]
+if not args.yisup:
+    bottom = mb[1][1]
+    scale_y *= -1
+left = mb[0][0]
+left *= scale_x
+bottom *= scale_y
+trans_x = args.x1 - left
+trans_y = args.y1 - bottom
+print(f"Scale:     {scale_x}, {scale_y}")
+print(f"Translate: {trans_x}, {trans_y}")
+
