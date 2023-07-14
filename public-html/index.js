@@ -49,6 +49,7 @@ xhr.addEventListener('load', function() {
 					layer.setStyle({color: '#3f6f6a', weight: 1, opacity: 0.75});
 					break;
 				case 'Polygon':
+					layer.setStyle({color: feature.properties.color, weight: 0});
 					break;
 				default:
 					debugger;
@@ -86,4 +87,10 @@ function ready() {
 		map.setView(coords, 1);
 	}
 }
+
+// Set up zoom handler
+map.on('zoomend', function() {
+	var zoom = map.getZoom();
+	//layer.bindTooltip(feature.properties.name + " (" + feature.properties.level + ")", {permanent: true, className: 'system-label', offset: [0, 0]});
+});
 

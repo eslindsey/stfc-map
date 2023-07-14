@@ -6,7 +6,12 @@ import loca
 import re
 from pathlib import Path
 
-mesh_scale = (0.25, 0.25)
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+
+def transform(name, x, y, z):
+    return [x *  0.33953260812857690150522441401203 +  620.65061007976712362166120182265,
+            y * -0.33837323271747048290964894533602 - 1056.58417176272120743560261062940]
 
 nodes = json.load(open('nodes.json', 'r'))
 systems = loca.load(open('systems.json', 'r'))
@@ -43,7 +48,7 @@ for i in range(0, len(galaxy['node_ids'])):
         },
     })
     coords[node] = [x, y]
-print(f"Galaxy bounds: ({gb[0][0]}, {gb[0][1]})-({gb[1][0]}, {gb[1][1]})", file=sys.stderr)
+eprint(f"Galaxy bounds: ({gb[0][0]}, {gb[0][1]})-({gb[1][0]}, {gb[1][1]})")
 
 for i in range(0, len(galaxy['source_ids'])):
     obj['features'].append({
@@ -58,35 +63,42 @@ for i in range(0, len(galaxy['source_ids'])):
         },
     })
 
+colors = {
+    'Federation.obj': '#0080ff',
+    'Romulan.obj':    '#00ff00',
+    'Klingon.obj':    '#ff0000',
+    'Augment.obj':    '#ffbb00',
+    'Dominion.obj':   '#8000ff',
+}
 mb = [[None, None], [None, None]]
 start = len(obj['features'])
 p = Path('obj')
 for fo in p.glob('*.obj'):
-    print(f"Working on {fo}", file=sys.stderr)
+    eprint(f"Working on {fo}")
     vertices = [(0, 0, 0)]
     with fo.open('r') as f:
         for line in f:
-            match = re.match("v ([-0-9eE.]+) ([-0-9eE.]+) ([-0-9eE.]+)", line)
+            match = re.match(r'v ([-0-9eE.]+) ([-0-9eE.]+) ([-0-9eE.]+)', line)
             if not match:
                 continue
-            floats = [float(v) for v in match.groups()]
-            x = mesh_scale[0] * floats[0]
-            y = mesh_scale[1] * -floats[2]
-            vertices.append([x, y])
+            (x, z, y) = [float(v) for v in match.groups()]
+            vertices.append(transform(fo.name, x, y, z))
             mb[0][0] = x if mb[0][0] is None else min(mb[0][0], x)
             mb[0][1] = y if mb[0][1] is None else min(mb[0][1], y)
             mb[1][0] = x if mb[1][0] is None else max(mb[1][0], x)
             mb[1][1] = y if mb[1][1] is None else max(mb[1][1], y)
-    print(f"Found {len(vertices)} vertices", file=sys.stderr)
+    eprint(f"Found {len(vertices)} vertices")
     with fo.open('r') as f:
         for line in f:
-            match = re.match("f (\d+)/\d+/\d+ (\d+)/\d+/\d+ (\d+)/\d+/\d+", line)
+            match = re.match(r'f (\d+)/\d+/\d+ (\d+)/\d+/\d+ (\d+)/\d+/\d+', line)
             if not match:
                 continue
             indices = [int(v) for v in match.groups()]
-            obj['features'].append({
+            feature = {
                 'type': 'Feature',
-                'properties': {},
+                'properties': {
+                    'color': colors.get(fo.name, '#ff0000'),
+                },
                 'geometry': {
                     'type': 'Polygon',
                     'coordinates': [[
@@ -96,13 +108,14 @@ for fo in p.glob('*.obj'):
                         vertices[indices[0]],
                     ]],
                 },
-            })
-        print(f"Found {len(obj['features']) - start} faces", file=sys.stderr)
-    print(f"Mesh bounds: ({mb[0][0]}, {mb[0][1]})-({mb[1][0]}, {mb[1][1]})", file=sys.stderr)
+            }
+            obj['features'].append(feature)
+        eprint(f"Found {len(obj['features']) - start} faces")
+    eprint(f"Mesh bounds: ({mb[0][0]}, {mb[0][1]})-({mb[1][0]}, {mb[1][1]})")
 
 scale_x = float(gb[1][0] - gb[0][0]) / (mb[1][0] - mb[0][0])
 scale_y = float(gb[1][1] - gb[0][1]) / (mb[1][1] - mb[0][1])
-print(f"Scale: ({scale_x}, {scale_y})", file=sys.stderr)
+eprint(f"Scale: ({scale_x}, {scale_y})")
 
 json.dump(obj, fp=sys.stdout, indent=2)
 print()
