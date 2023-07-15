@@ -20,32 +20,41 @@ body {
 	color: white !important;
 }
 
-.leaflet-popup {
-	background-image: url('popup.png');
+.system-generic {
+	background-image: url('popups/halo.png');
 	width: 647px;
 	height: 376px;
 }
 
-.leaflet-popup-content-wrapper {
+.system-generic .leaflet-popup-content-wrapper {
 	background: none;
 	color: #fff;
 	box-shadow: none;
 }
 
-.leaflet-popup-tip {
+.system-generic .leaflet-popup-tip-container {
 	visibility: hidden;
+}
+
+.system-generic .system-pointer-generic {
+	background-image: url('popups/generic.png');
+	position: absolute;
+	left: 124px;
+	top: 40px;
+	width: 400px;
+	height: 226px;
 }
 
 .name {
 	position: absolute;
-	left: 230px;
-	top: 16px;
+	left: 78px;
+	top: -6px;
 }
 
 .id {
 	position: absolute;
-	left: 261px;
-	top: 56px;
+	left: 103px;
+	top: 35px;
 	color: #999;
 }
 

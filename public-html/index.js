@@ -43,7 +43,7 @@ xhr.addEventListener('load', function() {
 			switch (feature.geometry.type) {
 				case 'Point':
 					layer.setIcon(nodeIcon);
-					layer.bindPopup('<h1 class="name">' + feature.properties.name + ' [' + feature.properties.level + ']</h1><p class="id">S: ' + feature.properties.objectid + '</p>');
+					layer.bindPopup('<div class="system-pointer-generic"><h1 class="name">' + feature.properties.name + ' [' + feature.properties.level + ']</h1><p class="id">S:' + feature.properties.objectid + '</p></div>', {className: 'system-generic', closeButton: false});
 					break;
 				case 'LineString':
 					layer.setStyle({color: '#3f6f6a', weight: 1, opacity: 0.75});
