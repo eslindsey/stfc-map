@@ -14,7 +14,8 @@ var bounds = [xy(-2402, -2094), xy(3972, 3380)];
 const map = L.map('map', {
 	crs: L.CRS.Simple,
 	bounds: bounds,
-	minZoom: -3,
+	renderer: L.canvas(),
+	minZoom: -2.5,
 	zoomSnap: 0.0,
 	zoomDelta: 0.25,
 	wheelPxPerZoomLevel: 60,
