@@ -29,6 +29,12 @@ obj = {
     'features': []
 }
 
+#############
+#           #
+#   NODES   #
+#           #
+#############
+
 gb = [[None, None], [None, None]]
 for i in range(0, len(galaxy['node_ids'])):
     x = galaxy['x_coords'][i]
@@ -60,6 +66,41 @@ for i in range(0, len(galaxy['node_ids'])):
     coords[node] = [x, y]
 eprint(f"Galaxy bounds: ({gb[0][0]}, {gb[0][1]})-({gb[1][0]}, {gb[1][1]})")
 
+#############
+#           #
+#   PATHS   #
+#           #
+#############
+
+# Paths are directional, that means for every connection the path will be
+# represented twice. This is undesirable as a waste of resources, but also
+# because we want to be able to style special warp paths (like toll roads)
+# and we can't do that if we draw another line directly above/below it.
+
+path_map = {}
+# First, add all the toll roads
+for i in range(0, len(galaxy['source_ids'])):
+    if galaxy['unlock_req_count'][i] < 1:
+        continue
+    sys1 = str(galaxy['source_ids'][i])
+    sys2 = str(galaxy['dest_ids'][i])
+    # Enforce a guaranteed order so we can find the path the other way
+    if sys1 < sys2:
+        sys1, sys2 = sys2, sys1
+    k = f"{sys1}-{sys2}"
+    path_map[k] = i
+# Next, add the remaining paths if they're not already drawn
+for i in range(0, len(galaxy['source_ids'])):
+    sys1 = str(galaxy['source_ids'][i])
+    sys2 = str(galaxy['dest_ids'][i])
+    if sys1 < sys2:
+        sys1, sys2 = sys2, sys1
+    k = f"{sys1}-{sys2}"
+    if k in path_map:
+        continue
+    path_map[k] = i
+
+# Now produce our output using only single paths
 counts = {
     '0': 'None',
     '1': 'Toll',
@@ -76,7 +117,7 @@ default_res = {
     'name': 'Unknown',
     'nameShort': 'Unknown',
 }
-for i in range(0, len(galaxy['source_ids'])):
+for i in path_map.values():
     feature = {
         'type': 'Feature',
         'properties': {
@@ -108,6 +149,16 @@ for i in range(0, len(galaxy['source_ids'])):
             toll['mission'] = source
         feature['properties']['toll'] = toll
     obj['features'].append(feature)
+
+##############
+#            #
+#   MESHES   #
+#            #
+##############
+
+# We should figure out a way to merge each group of faces into a single poly.
+# Currently we are just rendering every single face on its own, another waste
+# of resources.
 
 colors = {
     'Federation.obj': '#0080ff',
