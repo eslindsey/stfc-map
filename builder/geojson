@@ -18,9 +18,10 @@ def capitalize(matchobj):
     return matchobj.group(1).capitalize()
 
 nodes = json.load(open('nodes.json', 'r'))
-systems = loca.load(open('systems.loca.json', 'r'))
-factions = loca.load(open('factions.loca.json', 'r'), trimPrefix='faction')
-resources = loca.load(open('resources.loca.json', 'r'), trimPrefix='resource')
+systems = loca.load(open('loca/systems.json', 'r'))
+missions = loca.load(open('loca/mission_titles.json', 'r'))
+factions = loca.load(open('loca/factions.json', 'r'), trimPrefix='faction')
+resources = loca.load(open('loca/resources.json', 'r'), trimPrefix='resource')
 galaxy = nodes['galaxy_optimised']
 coords = {}
 
@@ -117,6 +118,9 @@ default_res = {
     'name': 'Unknown',
     'nameShort': 'Unknown',
 }
+default_mis = {
+    'title': 'Unknown',
+}
 for i in path_map.values():
     feature = {
         'type': 'Feature',
@@ -145,6 +149,9 @@ for i in path_map.values():
         if toll['type'] == 'Resource':
             toll['resource'] = resources.data.get(source, default_res)
             toll['resource']['id'] = source
+        elif toll['type'] == 'Mission':
+            toll['mission'] = missions.data.get(source, default_mis)
+            toll['mission']['id'] = source
         else:
             toll['mission'] = source
         feature['properties']['toll'] = toll
