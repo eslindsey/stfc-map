@@ -14,8 +14,13 @@ def transform(name, x, y, z):
     return [x *  0.33953260812857690150522441401203 +  620.65061007976712362166120182265,
             y * -0.33837323271747048290964894533602 - 1056.58417176272120743560261062940]
 
+def capitalize(matchobj):
+    return matchobj.group(1).capitalize()
+
 nodes = json.load(open('nodes.json', 'r'))
-systems = loca.load(open('systems.json', 'r'))
+systems = loca.load(open('systems.loca.json', 'r'))
+factions = loca.load(open('factions.loca.json', 'r'), trimPrefix='faction')
+resources = loca.load(open('resources.loca.json', 'r'), trimPrefix='resource')
 galaxy = nodes['galaxy_optimised']
 coords = {}
 
@@ -26,22 +31,26 @@ obj = {
 
 gb = [[None, None], [None, None]]
 for i in range(0, len(galaxy['node_ids'])):
-    node = str(galaxy['node_ids'][i])
-    name = 'Unknown'
-    if node in systems.data:
-        name = systems.data[node]['title']
     x = galaxy['x_coords'][i]
     y = galaxy['y_coords'][i]
     gb[0][0] = x if gb[0][0] is None else min(gb[0][0], x)
     gb[0][1] = y if gb[0][1] is None else min(gb[0][1], y)
     gb[1][0] = x if gb[1][0] is None else max(gb[1][0], x)
     gb[1][1] = y if gb[1][1] is None else max(gb[1][1], y)
+    node = str(galaxy['node_ids'][i]) 
+    fid = str(galaxy['factions'][i])
+    if fid not in factions.data and fid != "-1":
+        eprint(f"WARNING: Faction {fid} not found in factions loca")
     obj['features'].append({
         'type': 'Feature',
         'properties': {
-            'objectid':     node,
-            'name':         name,
-            'level':        galaxy['levels'][i],
+            'objectid':             node,
+            'name':                 systems.data.get(node, {'title': 'Unknown'})['title'],
+            'level':                galaxy['levels'][i],
+            'faction':              factions.data.get(fid, {'name': 'Independent'})['name'],
+            'miningSetups':         galaxy['mining_setups'][i],
+            'isDeepSpace':          galaxy['is_deep_space'][i],
+            'marauderSpawnRuleIds': galaxy['marauder_spawn_rule_ids'][i],
         },
         'geometry': {
             'type': 'Point',
@@ -51,10 +60,30 @@ for i in range(0, len(galaxy['node_ids'])):
     coords[node] = [x, y]
 eprint(f"Galaxy bounds: ({gb[0][0]}, {gb[0][1]})-({gb[1][0]}, {gb[1][1]})")
 
+counts = {
+    '0': 'None',
+    '1': 'Toll',
+    '2': 'Recall',
+}
+types  = {
+    '0': 'Empty',
+    '1': 'None',
+    '2': 'Mission',
+    '3': 'Resource',
+}
+default_res = {
+    'description': 'Unknown',
+    'name': 'Unknown',
+    'nameShort': 'Unknown',
+}
 for i in range(0, len(galaxy['source_ids'])):
-    obj['features'].append({
+    feature = {
         'type': 'Feature',
-        'properties': {},
+        'properties': {
+            'source':   systems.data.get(str(galaxy['source_ids'][i]), {'title': 'Unknown'})['title'],
+            'dest':     systems.data.get(str(galaxy['dest_ids'][i]), {'title': 'Unknown'})['title'],
+            'distance': galaxy['distances'][i],
+        },
         'geometry': {
             'type': 'LineString',
             'coordinates': [
@@ -62,7 +91,23 @@ for i in range(0, len(galaxy['source_ids'])):
                 coords[str(galaxy['dest_ids'][i])],
             ],
         },
-    })
+    }
+    count = galaxy['unlock_req_count'][i]
+    if count > 0:
+        req_id = galaxy['unlock_offset'][i]
+        source = str(galaxy['unlock_req_sources'][req_id])
+        toll = {
+            'class':    counts.get(str(count)),
+            'type':     types.get(str(galaxy['unlock_req_types'][req_id])),
+            'quantity': galaxy['unlock_req_quantities'][req_id],
+        }
+        if toll['type'] == 'Resource':
+            toll['resource'] = resources.data.get(source, default_res)
+            toll['resource']['id'] = source
+        else:
+            toll['mission'] = source
+        feature['properties']['toll'] = toll
+    obj['features'].append(feature)
 
 colors = {
     'Federation.obj': '#0080ff',

@@ -25,6 +25,10 @@ var nodeIcon = L.icon({
 	iconSize: [14, 13],
 	popupAnchor: [297, 197],
 });
+var tollIcon = L.icon({
+	iconUrl: 'toll.png',
+	iconSize: [19, 23],
+});
 
 // Load the data
 var xhr = new XMLHttpRequest();
@@ -43,10 +47,45 @@ xhr.addEventListener('load', function() {
 			switch (feature.geometry.type) {
 				case 'Point':
 					layer.setIcon(nodeIcon);
-					layer.bindPopup('<div class="system-pointer-generic"><h1 class="name">' + feature.properties.name + ' [' + feature.properties.level + ']</h1><p class="id">S:' + feature.properties.objectid + '</p></div>', {className: 'system-generic', closeButton: false});
+					layer.bindPopup(
+						'<div class="system-pointer-generic">' +
+							'<h3 class="faction">' + feature.properties.faction + '</h3>' +
+							'<h1 class="name">' + feature.properties.name + ' [' + feature.properties.level + ']</h1>' +
+							'<p class="id">S:' + feature.properties.objectid + '</p>' +
+							'<div class="hostiles">Hostiles: <b>' + feature.properties.marauderSpawnRuleIds + '</b></div>' +
+							'<div class="mining">Mining: <b>' + feature.properties.miningSetups + '</b></div>' +
+						'</div>',
+						{
+							className: 'system-generic',
+							closeButton: false,
+						}
+					);
 					break;
 				case 'LineString':
 					layer.setStyle({color: '#3f6f6a', weight: 1, opacity: 0.75});
+					let props = feature.properties;
+					if (props.toll) {
+						let toll = props.toll;
+						if (toll.resource) {
+							layer.setStyle({dashArray: '8'});
+							coords = feature.geometry.coordinates;
+							x1 = coords[0][0];
+							y1 = coords[0][1];
+							x2 = coords[1][0];
+							y2 = coords[1][1];
+							ctr_x = (x2 - x1) / 2 + x1;
+							ctr_y = (y2 - y1) / 2 + y1;
+							L.marker(xy(ctr_x, ctr_y)).setIcon(tollIcon).bindPopup(
+								'<h2>Cost To Travel</h2>' +
+								'<p>Warping from ' + props.source + ' to ' + props.dest + ' costs ' +
+									'<span class="cost">' + toll.resource.name + ' x' + toll.quantity + '</span>' +
+								'</p>',
+								{
+									className: 'toll',
+								}
+							).addTo(map);
+						}
+					}
 					break;
 				case 'Polygon':
 					layer.setStyle({color: feature.properties.color, weight: 0});
