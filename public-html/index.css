@@ -22,8 +22,9 @@ body {
 
 .system-generic {
 	background-image: url('popups/halo.png');
-	width: 647px;
-	height: 376px;
+	width: 524px; /*647px;*/
+	height: 266px; /*376px;*/
+	overflow: hidden;
 }
 
 .system-generic .leaflet-popup-content-wrapper {

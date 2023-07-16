@@ -23,7 +23,7 @@ map.setView(xy(-43, 274), -1) // Sol
 var nodeIcon = L.icon({
 	iconUrl: 'node.png',
 	iconSize: [14, 13],
-	popupAnchor: [297, 197],
+	popupAnchor: [235, 86],
 });
 var tollIcon = L.icon({
 	iconUrl: 'toll.png',
