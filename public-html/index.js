@@ -20,15 +20,9 @@ const map = L.map('map', {
 map.setView(xy(-43, 274), -1) // Sol
 
 // Set up the visuals
-var nodeIcon = L.icon({
-	iconUrl: 'node.png',
-	iconSize: [14, 13],
-	popupAnchor: [235, 86],
-});
-var tollIcon = L.icon({
-	iconUrl: 'toll.png',
-	iconSize: [19, 23],
-});
+var nodeIcon = L.icon({iconUrl: 'node.png', iconSize: [14, 13], popupAnchor: [235, 86]});
+var tollIcon = L.icon({iconUrl: 'toll.png', iconSize: [19, 23]});
+var lockIcon = L.icon({iconUrl: 'lock.png', iconSize: [24, 31]});
 
 // Load the data
 var xhr = new XMLHttpRequest();
@@ -62,24 +56,33 @@ xhr.addEventListener('load', function() {
 					);
 					break;
 				case 'LineString':
-					layer.setStyle({color: '#3f6f6a', weight: 1, opacity: 0.75});
+					layer.setStyle({color: '#3f6f6a', weight: 2, opacity: 0.75});
 					let props = feature.properties;
 					if (props.toll) {
 						let toll = props.toll;
+						coords = feature.geometry.coordinates;
+						x1 = coords[0][0];
+						y1 = coords[0][1];
+						x2 = coords[1][0];
+						y2 = coords[1][1];
+						ctr_x = (x2 - x1) / 2 + x1;
+						ctr_y = (y2 - y1) / 2 + y1;
 						if (toll.resource) {
 							layer.setStyle({dashArray: '8'});
-							coords = feature.geometry.coordinates;
-							x1 = coords[0][0];
-							y1 = coords[0][1];
-							x2 = coords[1][0];
-							y2 = coords[1][1];
-							ctr_x = (x2 - x1) / 2 + x1;
-							ctr_y = (y2 - y1) / 2 + y1;
 							L.marker(xy(ctr_x, ctr_y)).setIcon(tollIcon).bindPopup(
 								'<h2>Cost To Travel</h2>' +
 								'<p>Warping from ' + props.source + ' to ' + props.dest + ' costs ' +
 									'<span class="cost">' + toll.resource.name + ' x' + toll.quantity + '</span>' +
 								'</p>',
+								{
+									className: 'toll',
+								}
+							).addTo(map);
+						} else if (toll.mission) {
+							layer.setStyle({dashArray: '5 7', color: '#ff8080', weight: 4});
+							L.marker(xy(ctr_x, ctr_y)).setIcon(lockIcon).bindPopup(
+								'<h2>System Path Locked</h2>' +
+								'<p>You must complete the mission ' + toll.mission + '</p>',
 								{
 									className: 'toll',
 								}
