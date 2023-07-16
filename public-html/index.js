@@ -15,6 +15,9 @@ const map = L.map('map', {
 	crs: L.CRS.Simple,
 	bounds: bounds,
 	minZoom: -3,
+	zoomSnap: 0.0,
+	zoomDelta: 0.25,
+	wheelPxPerZoomLevel: 60,
 });
 
 map.setView(xy(-43, 274), -1) // Sol
