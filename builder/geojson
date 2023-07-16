@@ -222,5 +222,13 @@ scale_x = float(gb[1][0] - gb[0][0]) / (mb[1][0] - mb[0][0])
 scale_y = float(gb[1][1] - gb[0][1]) / (mb[1][1] - mb[0][1])
 eprint(f"Scale: ({scale_x}, {scale_y})")
 
+##############
+#            #
+#   OUTPUT   #
+#            #
+##############
+
+# TODO: Remove indentation after debugging to shrink the file size
+
 json.dump(obj, fp=sys.stdout, indent=2)
 print()

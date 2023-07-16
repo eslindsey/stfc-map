@@ -83,7 +83,7 @@ xhr.addEventListener('load', function() {
 							layer.setStyle({dashArray: '5 7', color: '#ff8080', weight: 4});
 							L.marker(xy(ctr_x, ctr_y)).setIcon(lockIcon).bindPopup(
 								'<h2>System Path Locked</h2>' +
-								'<p>You must complete the mission ' + toll.mission + '</p>',
+								'<p>You must complete the mission <a href="https://stfc.space/missions/' + toll.mission.id + '" target="_blank">' + toll.mission.title + '</a></p>',
 								{
 									className:   'toll',
 									closeButton: false,
