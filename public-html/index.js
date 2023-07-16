@@ -50,7 +50,7 @@ xhr.addEventListener('load', function() {
 							'<div class="mining">Mining: <b>' + feature.properties.miningSetups + '</b></div>' +
 						'</div>',
 						{
-							className: 'system-generic',
+							className:   'system-generic',
 							closeButton: false,
 						}
 					);
@@ -75,7 +75,8 @@ xhr.addEventListener('load', function() {
 									'<span class="cost">' + toll.resource.name + ' x' + toll.quantity + '</span>' +
 								'</p>',
 								{
-									className: 'toll',
+									className:   'toll',
+									closeButton: false,
 								}
 							).addTo(map);
 						} else if (toll.mission) {
@@ -84,7 +85,8 @@ xhr.addEventListener('load', function() {
 								'<h2>System Path Locked</h2>' +
 								'<p>You must complete the mission ' + toll.mission + '</p>',
 								{
-									className: 'toll',
+									className:   'toll',
+									closeButton: false,
 								}
 							).addTo(map);
 						}
