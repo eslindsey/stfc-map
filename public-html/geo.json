@@ -4181,6 +4181,30 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1449055",
+        "name": "Unknown",
+        "level": 51,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          188943259,
+          32590404,
+          140833816,
+          299965545
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1289,
+          2841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "3712908",
         "name": "Altanea",
         "level": 38,
@@ -5424,6 +5448,30 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "102457235",
+        "name": "Unknown",
+        "level": 35,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          299965545,
+          622831963,
+          2110303188,
+          1632847594
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1258,
+          2804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "105829765",
         "name": "Alnilam",
         "level": 26,
@@ -5588,7 +5636,8 @@
         ],
         "isDeepSpace": true,
         "marauderSpawnRuleIds": [
-          974012852
+          974012852,
+          904101428
         ]
       },
       "geometry": {
@@ -10233,6 +10282,28 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "454496611",
+        "name": "Unknown",
+        "level": 38,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          959,
+          2978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "454578778",
         "name": "Barklay",
         "level": 31,
@@ -11060,6 +11131,30 @@
         "coordinates": [
           1011,
           7
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "516430972",
+        "name": "Unknown",
+        "level": 38,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          85731650,
+          1635062682,
+          155116814,
+          299965545
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1251,
+          2759
         ]
       }
     },
@@ -14085,6 +14180,28 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "738849490",
+        "name": "Unknown",
+        "level": 35,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1098,
+          2821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "739609161",
         "name": "Angosia",
         "level": 25,
@@ -15221,6 +15338,32 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "825330563",
+        "name": "Unknown",
+        "level": 48,
+        "faction": "Independent",
+        "miningSetups": [
+          1753825900,
+          1619353838,
+          2067091840
+        ],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          953,
+          2831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "825963253",
         "name": "Sual",
         "level": 8,
@@ -15401,7 +15544,8 @@
         ],
         "isDeepSpace": true,
         "marauderSpawnRuleIds": [
-          1862734498
+          1862734498,
+          148495445
         ]
       },
       "geometry": {
@@ -15775,6 +15919,28 @@
         "coordinates": [
           -1011,
           -2060
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "861395560",
+        "name": "Unknown",
+        "level": 35,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          991,
+          2877
         ]
       }
     },
@@ -16306,6 +16472,30 @@
         "coordinates": [
           74,
           -407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "912504673",
+        "name": "Unknown",
+        "level": 56,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          845631872,
+          1108018218,
+          180868224,
+          299965545
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1244,
+          2848
         ]
       }
     },
@@ -17264,8 +17454,7 @@
         ],
         "isDeepSpace": true,
         "marauderSpawnRuleIds": [
-          656119803,
-          1037325549
+          656119803
         ]
       },
       "geometry": {
@@ -20162,6 +20351,25 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1192666211",
+        "name": "Unknown",
+        "level": 34,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": []
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          976,
+          2486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "1193966004",
         "name": "Suvfa",
         "level": 53,
@@ -21025,6 +21233,32 @@
         "coordinates": [
           2523,
           -1461
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "1278994945",
+        "name": "Unknown",
+        "level": 58,
+        "faction": "Independent",
+        "miningSetups": [
+          1462507646,
+          1986071318,
+          1150172553
+        ],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1052,
+          2884
         ]
       }
     },
@@ -22430,6 +22664,32 @@
         "coordinates": [
           840,
           3285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "1395184698",
+        "name": "Unknown",
+        "level": 55,
+        "faction": "Independent",
+        "miningSetups": [
+          1278068772,
+          797113396,
+          1170869514
+        ],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1045,
+          2920
         ]
       }
     },
@@ -24363,6 +24623,32 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1559822951",
+        "name": "Unknown",
+        "level": 40,
+        "faction": "Independent",
+        "miningSetups": [
+          2141879278,
+          1972785573,
+          1912584159
+        ],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          923,
+          2898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "1560703707",
         "name": "Ezla Beta",
         "level": 20,
@@ -25461,6 +25747,32 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1636418521",
+        "name": "Unknown",
+        "level": 51,
+        "faction": "Independent",
+        "miningSetups": [
+          1024436186,
+          1837117632,
+          1477463804
+        ],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1015,
+          2939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "1640104968",
         "name": "Zed Alpha",
         "level": 31,
@@ -26094,7 +26406,8 @@
         ],
         "isDeepSpace": true,
         "marauderSpawnRuleIds": [
-          2093945605
+          2093945605,
+          1410442643
         ]
       },
       "geometry": {
@@ -27307,6 +27620,30 @@
         "coordinates": [
           2791,
           806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "1770747892",
+        "name": "Unknown",
+        "level": 41,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          1081903355,
+          289880030,
+          1453043676,
+          299965545
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1299,
+          2772
         ]
       }
     },
@@ -28965,6 +29302,53 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1895992418",
+        "name": "Unknown",
+        "level": 35,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          299965545
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1186,
+          2776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "1897990330",
+        "name": "Unknown",
+        "level": 45,
+        "faction": "Independent",
+        "miningSetups": [
+          1346253646,
+          1327089365,
+          286233202
+        ],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          419122932,
+          274353503
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          920,
+          2854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "1900858811",
         "name": "Truai",
         "level": 25,
@@ -30571,6 +30955,30 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "2016095572",
+        "name": "Unknown",
+        "level": 46,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          1243196521,
+          783170628,
+          1520761300,
+          299965545
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1307,
+          2809
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "2018375117",
         "name": "Rakan",
         "level": 36,
@@ -30667,7 +31075,8 @@
         ],
         "isDeepSpace": true,
         "marauderSpawnRuleIds": [
-          1276055616
+          1276055616,
+          1176849635
         ]
       },
       "geometry": {
@@ -31872,6 +32281,30 @@
         "coordinates": [
           1623,
           959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "2126419093",
+        "name": "Unknown",
+        "level": 60,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": true,
+        "marauderSpawnRuleIds": [
+          1694771197,
+          1046626579,
+          1142952600,
+          299965545
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1208,
+          2822
         ]
       }
     },
@@ -33298,6 +33731,36 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 28,
+        "toll": {
+          "class": "Recall",
+          "type": "Mission",
+          "quantity": 1,
+          "mission": {
+            "title": "Silver Scar Part 2",
+            "id": "1293743044"
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            991,
+            2877
+          ],
+          [
+            1098,
+            2821
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Raddan",
         "dest": "Rainsford",
         "distance": 16,
@@ -33897,6 +34360,36 @@
           [
             430,
             -867
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Ba'Neth",
+        "dest": "Unknown",
+        "distance": 25,
+        "toll": {
+          "class": "Toll",
+          "type": "Mission",
+          "quantity": 1,
+          "mission": {
+            "title": "Entanglement Part 8",
+            "id": "26961507"
+          }
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            956,
+            2507
+          ],
+          [
+            976,
+            2486
           ]
         ]
       }
@@ -41606,6 +42099,27 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 160
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1289,
+            2841
+          ],
+          [
+            1258,
+            2804
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Altanea",
         "dest": "Iapedes",
         "distance": 38
@@ -42572,6 +43086,27 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Monea",
+        "dest": "Unknown",
+        "distance": 28
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1021,
+            2691
+          ],
+          [
+            991,
+            2877
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Quv Qeb",
         "dest": "Beta Penthe",
         "distance": 38
@@ -43468,6 +44003,132 @@
           [
             1009,
             2605
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 250
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1258,
+            2804
+          ],
+          [
+            1208,
+            2822
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 100
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1258,
+            2804
+          ],
+          [
+            1307,
+            2809
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 40
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1258,
+            2804
+          ],
+          [
+            1251,
+            2759
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 75
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1258,
+            2804
+          ],
+          [
+            1299,
+            2772
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 28
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1258,
+            2804
+          ],
+          [
+            1186,
+            2776
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 200
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1258,
+            2804
+          ],
+          [
+            1244,
+            2848
           ]
         ]
       }
@@ -51329,6 +51990,48 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Unknown",
+        "dest": "Tekara",
+        "distance": 28
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            959,
+            2978
+          ],
+          [
+            926,
+            3097
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 28
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            959,
+            2978
+          ],
+          [
+            991,
+            2877
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Barklay",
         "dest": "Aiti",
         "distance": 16
@@ -56201,6 +56904,27 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 28
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1098,
+            2821
+          ],
+          [
+            1186,
+            2776
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Angosia",
         "dest": "Gemet",
         "distance": 18
@@ -57587,6 +58311,27 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 150
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            953,
+            2831
+          ],
+          [
+            991,
+            2877
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Sual",
         "dest": "Aodaan",
         "distance": 5
@@ -58399,6 +59144,111 @@
           [
             -1046,
             -2007
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 240
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            991,
+            2877
+          ],
+          [
+            1015,
+            2939
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 440
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            991,
+            2877
+          ],
+          [
+            1052,
+            2884
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 300
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            991,
+            2877
+          ],
+          [
+            1045,
+            2920
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 65
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            991,
+            2877
+          ],
+          [
+            923,
+            2898
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Unknown",
+        "dest": "Unknown",
+        "distance": 120
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            991,
+            2877
+          ],
+          [
+            920,
+            2854
           ]
         ]
       }
