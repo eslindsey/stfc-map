@@ -4182,7 +4182,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1449055",
-        "name": "Unknown",
+        "name": "Johlan",
         "level": 51,
         "faction": "Independent",
         "miningSetups": [],
@@ -5449,7 +5449,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "102457235",
-        "name": "Unknown",
+        "name": "Samarklew",
         "level": 35,
         "faction": "Independent",
         "miningSetups": [],
@@ -10283,7 +10283,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "454496611",
-        "name": "Unknown",
+        "name": "Minkalal",
         "level": 38,
         "faction": "Independent",
         "miningSetups": [],
@@ -11138,7 +11138,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "516430972",
-        "name": "Unknown",
+        "name": "Larrios",
         "level": 38,
         "faction": "Independent",
         "miningSetups": [],
@@ -14181,7 +14181,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "738849490",
-        "name": "Unknown",
+        "name": "Tugaash",
         "level": 35,
         "faction": "Independent",
         "miningSetups": [],
@@ -15339,7 +15339,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "825330563",
-        "name": "Unknown",
+        "name": "Padilac",
         "level": 48,
         "faction": "Independent",
         "miningSetups": [
@@ -15926,7 +15926,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "861395560",
-        "name": "Unknown",
+        "name": "Nygea",
         "level": 35,
         "faction": "Independent",
         "miningSetups": [],
@@ -16479,7 +16479,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "912504673",
-        "name": "Unknown",
+        "name": "Andracona",
         "level": 56,
         "faction": "Independent",
         "miningSetups": [],
@@ -18680,7 +18680,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1083137278",
-        "name": "Unknown",
+        "name": "Wridian",
         "level": 35,
         "faction": "Independent",
         "miningSetups": [],
@@ -20352,7 +20352,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1192666211",
-        "name": "Unknown",
+        "name": "Hasak",
         "level": 34,
         "faction": "Independent",
         "miningSetups": [],
@@ -21240,7 +21240,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1278994945",
-        "name": "Unknown",
+        "name": "Gawalara",
         "level": 58,
         "faction": "Independent",
         "miningSetups": [
@@ -22671,7 +22671,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1395184698",
-        "name": "Unknown",
+        "name": "Litzarr",
         "level": 55,
         "faction": "Independent",
         "miningSetups": [
@@ -24624,7 +24624,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1559822951",
-        "name": "Unknown",
+        "name": "Veringan",
         "level": 40,
         "faction": "Independent",
         "miningSetups": [
@@ -25748,7 +25748,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1636418521",
-        "name": "Unknown",
+        "name": "Fygl",
         "level": 51,
         "faction": "Independent",
         "miningSetups": [
@@ -27627,7 +27627,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1770747892",
-        "name": "Unknown",
+        "name": "Ronkel",
         "level": 41,
         "faction": "Independent",
         "miningSetups": [],
@@ -29303,7 +29303,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1895992418",
-        "name": "Unknown",
+        "name": "Tomalor",
         "level": 35,
         "faction": "Independent",
         "miningSetups": [],
@@ -29324,7 +29324,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1897990330",
-        "name": "Unknown",
+        "name": "Stambo",
         "level": 45,
         "faction": "Independent",
         "miningSetups": [
@@ -29631,7 +29631,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "1918546891",
-        "name": "Unknown",
+        "name": "Diabolai",
         "level": 35,
         "faction": "Independent",
         "miningSetups": [],
@@ -30956,7 +30956,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "2016095572",
-        "name": "Unknown",
+        "name": "Michfort",
         "level": 46,
         "faction": "Independent",
         "miningSetups": [],
@@ -32288,7 +32288,7 @@
       "type": "Feature",
       "properties": {
         "objectid": "2126419093",
-        "name": "Unknown",
+        "name": "Gareill",
         "level": 60,
         "faction": "Independent",
         "miningSetups": [],
@@ -33731,8 +33731,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Nygea",
+        "dest": "Tugaash",
         "distance": 28,
         "toll": {
           "class": "Recall",
@@ -34368,7 +34368,7 @@
       "type": "Feature",
       "properties": {
         "source": "Ba'Neth",
-        "dest": "Unknown",
+        "dest": "Hasak",
         "distance": 25,
         "toll": {
           "class": "Toll",
@@ -42099,8 +42099,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Johlan",
+        "dest": "Samarklew",
         "distance": 160
       },
       "geometry": {
@@ -43087,7 +43087,7 @@
       "type": "Feature",
       "properties": {
         "source": "Monea",
-        "dest": "Unknown",
+        "dest": "Nygea",
         "distance": 28
       },
       "geometry": {
@@ -44010,8 +44010,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Samarklew",
+        "dest": "Gareill",
         "distance": 250
       },
       "geometry": {
@@ -44031,8 +44031,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Samarklew",
+        "dest": "Michfort",
         "distance": 100
       },
       "geometry": {
@@ -44052,8 +44052,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Samarklew",
+        "dest": "Larrios",
         "distance": 40
       },
       "geometry": {
@@ -44073,8 +44073,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Samarklew",
+        "dest": "Ronkel",
         "distance": 75
       },
       "geometry": {
@@ -44094,8 +44094,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Samarklew",
+        "dest": "Tomalor",
         "distance": 28
       },
       "geometry": {
@@ -44115,8 +44115,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Samarklew",
+        "dest": "Andracona",
         "distance": 200
       },
       "geometry": {
@@ -51990,7 +51990,7 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
+        "source": "Minkalal",
         "dest": "Tekara",
         "distance": 28
       },
@@ -52011,8 +52011,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Minkalal",
+        "dest": "Nygea",
         "distance": 28
       },
       "geometry": {
@@ -56904,8 +56904,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Tugaash",
+        "dest": "Tomalor",
         "distance": 28
       },
       "geometry": {
@@ -58311,8 +58311,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Padilac",
+        "dest": "Nygea",
         "distance": 150
       },
       "geometry": {
@@ -59151,8 +59151,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Nygea",
+        "dest": "Fygl",
         "distance": 240
       },
       "geometry": {
@@ -59172,8 +59172,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Nygea",
+        "dest": "Gawalara",
         "distance": 440
       },
       "geometry": {
@@ -59193,8 +59193,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Nygea",
+        "dest": "Litzarr",
         "distance": 300
       },
       "geometry": {
@@ -59214,8 +59214,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Nygea",
+        "dest": "Veringan",
         "distance": 65
       },
       "geometry": {
@@ -59235,8 +59235,8 @@
     {
       "type": "Feature",
       "properties": {
-        "source": "Unknown",
-        "dest": "Unknown",
+        "source": "Nygea",
+        "dest": "Stambo",
         "distance": 120
       },
       "geometry": {
@@ -62407,7 +62407,7 @@
       "type": "Feature",
       "properties": {
         "source": "Velixys",
-        "dest": "Unknown",
+        "dest": "Wridian",
         "distance": 28
       },
       "geometry": {
@@ -62428,7 +62428,7 @@
       "type": "Feature",
       "properties": {
         "source": "Velixys",
-        "dest": "Unknown",
+        "dest": "Diabolai",
         "distance": 28
       },
       "geometry": {
