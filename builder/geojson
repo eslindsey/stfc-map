@@ -18,7 +18,7 @@ def transform(name, x, y, z):
 def capitalize(matchobj):
     return matchobj.group(1).capitalize()
 
-nodes = json.load(open('nodes.json', 'r'))
+nodes = json.load(open('galaxy_nodes_optimised.json', 'r'))
 systems = loca.load(open('loca/systems.json', 'r'))
 missions = loca.load(open('loca/mission_titles.json', 'r'))
 factions = loca.load(open('loca/factions.json', 'r'), trimPrefix='faction')
@@ -47,8 +47,10 @@ for i in range(0, len(galaxy['node_ids'])):
     gb[1][1] = y if gb[1][1] is None else max(gb[1][1], y)
     node = str(galaxy['node_ids'][i]) 
     fid = str(galaxy['factions'][i])
+    if node not in systems.data:
+        eprint(f"WARNING: Name for for system {node} not found")
     if fid not in factions.data and fid != "-1":
-        eprint(f"WARNING: Faction {fid} not found in factions loca")
+        eprint(f"WARNING: Faction name not found for loca {fid}, system {node}")
     obj['features'].append({
         'type': 'Feature',
         'properties': {

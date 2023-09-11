@@ -4469,6 +4469,29 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "28174235",
+        "name": "Tunicci",
+        "level": 42,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          2011923103,
+          888051292,
+          84165711
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -347,
+          960
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "28429154",
         "name": "Hyland",
         "level": 42,
@@ -4762,6 +4785,29 @@
         "coordinates": [
           -1298,
           -2025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "42889120",
+        "name": "Elt-97",
+        "level": 51,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1355955671,
+          1814067350,
+          1048229197
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -270,
+          1037
         ]
       }
     },
@@ -7426,6 +7472,29 @@
         "coordinates": [
           343,
           -807
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "254119431",
+        "name": "Stetson",
+        "level": 48,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          233778946,
+          2133836888,
+          552686783
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -311,
+          1004
         ]
       }
     },
@@ -13367,6 +13436,27 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "674194026",
+        "name": "Hysperia",
+        "level": 40,
+        "faction": "Independent",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          202014694
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -132,
+          846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "678395209",
         "name": "ghuH",
         "level": 50,
@@ -14754,6 +14844,29 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "787224574",
+        "name": "Regiocomo",
+        "level": 58,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1774824382,
+          1810230038,
+          1420612591
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -225,
+          962
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "787441530",
         "name": "Veist",
         "level": 6,
@@ -15807,6 +15920,29 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "848939005",
+        "name": "Nonsuch",
+        "level": 40,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1961290500,
+          888051292,
+          84165711
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -317,
+          939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "849541812",
         "name": "Azha",
         "level": 20,
@@ -16383,6 +16519,29 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "901134594",
+        "name": "Abriluni",
+        "level": 44,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          313208808,
+          888051292,
+          1695720149
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -352,
+          991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "902308741",
         "name": "Velata",
         "level": 36,
@@ -16449,6 +16608,29 @@
         "coordinates": [
           -298,
           -717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "903966281",
+        "name": "Maelruan",
+        "level": 40,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1961290500,
+          888051292,
+          84165711
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -281,
+          935
         ]
       }
     },
@@ -18557,6 +18739,29 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1072736201",
+        "name": "Medici",
+        "level": 60,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1779931253,
+          1810230038,
+          161779611
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -250,
+          940
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "1072986698",
         "name": "Ardaji",
         "level": 45,
@@ -20040,6 +20245,29 @@
         "coordinates": [
           717,
           696
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "1166245161",
+        "name": "Quiparas",
+        "level": 50,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          2118186083,
+          2133836888,
+          552686783
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -298,
+          1037
         ]
       }
     },
@@ -23651,6 +23879,28 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1476365148",
+        "name": "Hilltara",
+        "level": 40,
+        "faction": "Federation",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          338732144,
+          393770144
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          310,
+          1098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "1476675021",
         "name": "Mada",
         "level": 21,
@@ -26739,6 +26989,29 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1704295716",
+        "name": "Biscotti",
+        "level": 55,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1487212416,
+          1814067350,
+          448908305
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -251,
+          974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "1706447579",
         "name": "Beine",
         "level": 50,
@@ -28220,6 +28493,29 @@
         "coordinates": [
           -1013,
           -86
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "1805626054",
+        "name": "Brawowe",
+        "level": 46,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1068903992,
+          2133836888,
+          1695720149
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -317,
+          974
         ]
       }
     },
@@ -30376,6 +30672,29 @@
     {
       "type": "Feature",
       "properties": {
+        "objectid": "1963489097",
+        "name": "Hornebolte",
+        "level": 46,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1068903992,
+          2133836888,
+          1695720149
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -281,
+          964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "objectid": "1967657235",
         "name": "Allonir",
         "level": 50,
@@ -30997,6 +31316,29 @@
         "coordinates": [
           -2116,
           1212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "2019000438",
+        "name": "Corvinus",
+        "level": 56,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          2050763852,
+          1810230038,
+          448908305
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -219,
+          992
         ]
       }
     },
@@ -32418,6 +32760,29 @@
         "coordinates": [
           -479,
           -367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "objectid": "2143776102",
+        "name": "Mazai",
+        "level": 53,
+        "faction": "Texas-class",
+        "miningSetups": [],
+        "isDeepSpace": false,
+        "marauderSpawnRuleIds": [
+          1286497601,
+          1814067350,
+          1048229197
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -258,
+          1005
         ]
       }
     },
@@ -42519,6 +42884,48 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Tunicci",
+        "dest": "Nonsuch",
+        "distance": 75
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -347,
+            960
+          ],
+          [
+            -317,
+            939
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Tunicci",
+        "dest": "Abriluni",
+        "distance": 110
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -347,
+            960
+          ],
+          [
+            -352,
+            991
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Hyland",
         "dest": "Goesting",
         "distance": 70
@@ -43058,6 +43465,48 @@
           [
             -1356,
             -1945
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Elt-97",
+        "dest": "Mazai",
+        "distance": 255
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -270,
+            1037
+          ],
+          [
+            -258,
+            1005
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Elt-97",
+        "dest": "Quiparas",
+        "distance": 205
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -270,
+            1037
+          ],
+          [
+            -298,
+            1037
           ]
         ]
       }
@@ -47363,6 +47812,48 @@
           [
             373,
             -826
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Stetson",
+        "dest": "Quiparas",
+        "distance": 185
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -311,
+            1004
+          ],
+          [
+            -298,
+            1037
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Stetson",
+        "dest": "Brawowe",
+        "distance": 160
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -311,
+            1004
+          ],
+          [
+            -317,
+            974
           ]
         ]
       }
@@ -55959,6 +56450,48 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Hysperia",
+        "dest": "Hilltara",
+        "distance": 60
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -132,
+            846
+          ],
+          [
+            310,
+            1098
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Hysperia",
+        "dest": "Maelruan",
+        "distance": 60
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -132,
+            846
+          ],
+          [
+            -281,
+            935
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "ghuH",
         "dest": "tlhuHwI'",
         "distance": 185
@@ -57555,6 +58088,48 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Regiocomo",
+        "dest": "Medici",
+        "distance": 500
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -225,
+            962
+          ],
+          [
+            -250,
+            940
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Regiocomo",
+        "dest": "Corvinus",
+        "distance": 440
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -225,
+            962
+          ],
+          [
+            -219,
+            992
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Lindstrom",
         "dest": "Karppinen",
         "distance": 24
@@ -58836,6 +59411,27 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Nonsuch",
+        "dest": "Maelruan",
+        "distance": 65
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -317,
+            939
+          ],
+          [
+            -281,
+            935
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Azha",
         "dest": "Kaus Australis",
         "distance": 6
@@ -59816,6 +60412,27 @@
           [
             2334,
             -477
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Abriluni",
+        "dest": "Brawowe",
+        "distance": 120
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -352,
+            991
+          ],
+          [
+            -317,
+            974
           ]
         ]
       }
@@ -66291,6 +66908,27 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Hilltara",
+        "dest": "Fibona",
+        "distance": 60
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            310,
+            1098
+          ],
+          [
+            933,
+            963
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Omtose",
         "dest": "Caldik",
         "distance": 6
@@ -67446,6 +68084,69 @@
     {
       "type": "Feature",
       "properties": {
+        "source": "Biscotti",
+        "dest": "Hornebolte",
+        "distance": 320
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -251,
+            974
+          ],
+          [
+            -281,
+            964
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Biscotti",
+        "dest": "Corvinus",
+        "distance": 355
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -251,
+            974
+          ],
+          [
+            -219,
+            992
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Biscotti",
+        "dest": "Mazai",
+        "distance": 320
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -251,
+            974
+          ],
+          [
+            -258,
+            1005
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "source": "Beine",
         "dest": "Draumen",
         "distance": 185
@@ -68069,6 +68770,27 @@
           [
             -1596,
             -1928
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source": "Brawowe",
+        "dest": "Hornebolte",
+        "distance": 120
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -317,
+            974
+          ],
+          [
+            -281,
+            964
           ]
         ]
       }
