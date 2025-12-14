@@ -3,9 +3,11 @@
 import sys
 import json
 import re
+import sys
 from pathlib import Path
 
 import loca
+from bcolors import bcolors
 from eprint import eprint
 
 def transform(name, x, y, z):
@@ -38,6 +40,8 @@ obj = {
 #############
 
 gb = [[None, None], [None, None]]
+name_warnings = {}
+faction_warnings = {}
 for i in range(0, len(galaxy['node_ids'])):
     x = galaxy['x_coords'][i]
     y = galaxy['y_coords'][i]
@@ -46,18 +50,44 @@ for i in range(0, len(galaxy['node_ids'])):
     gb[1][0] = x if gb[1][0] is None else max(gb[1][0], x)
     gb[1][1] = y if gb[1][1] is None else max(gb[1][1], y)
     node = str(galaxy['node_ids'][i]) 
-    fid = str(galaxy['factions'][i])
+    fids = str(galaxy['factions'][i])[1:-1].split(", ")
+    # ^^ fids changed to an array some time on or before Dec. 11, 2025 update
+    # (was "-1" or "96898466624", now "[]" or "[903863086968]" or "[894624686868, 219035897683, 9827538729376]")
+
     if node not in systems.data:
-        eprint(f"WARNING: Name for for system {node} not found")
-    if fid not in factions.data and fid != "-1":
-        eprint(f"WARNING: Faction name not found for loca {fid}, system {node}")
+        if node not in name_warnings:
+            eprint(f"{bcolors.WARNING}WARNING:{bcolors.ENDC} Name for for system {node} not found")
+            name_warnings[node] = True
+
+    name = systems.data.get(node, {'title': 'Unknown'})['title']
+
+    fs = []
+    for fid in fids:
+        f = "Unknown"
+        if fid == '-1' or fid == '':
+            f = "Independent"
+        else:
+            if fid not in factions.data:
+                if fid not in faction_warnings:
+                    eprint(f"{bcolors.WARNING}WARNING:{bcolors.ENDC} Faction name not found for loca {fid}, system {node} ({name})")
+                    faction_warnings[fid] = True
+            else:
+                faction = factions.data.get(fid, {'name': "Independent"})
+                if 'name' in faction:
+                    f = faction['name']
+                elif 'emoji' in faction:
+                    f = faction['emoji']
+                else:
+                    eprint(f"{bcolors.WARNING}WARNING:{bcolors.ENDC} Neither 'name' nor 'emoji' found in faction: {faction}")
+        fs.append(f)
+
     obj['features'].append({
         'type': 'Feature',
         'properties': {
             'objectid':             node,
-            'name':                 systems.data.get(node, {'title': 'Unknown'})['title'],
+            'name':                 name,
             'level':                galaxy['levels'][i],
-            'faction':              factions.data.get(fid, {'name': 'Independent'})['name'],
+            'faction':              ", ".join(fs),
             'miningSetups':         galaxy['mining_setups'][i],
             'isDeepSpace':          galaxy['is_deep_space'][i],
             'marauderSpawnRuleIds': galaxy['marauder_spawn_rule_ids'][i],
@@ -125,18 +155,28 @@ default_mis = {
     'title': 'Unknown',
 }
 for i in path_map.values():
+    sid = str(galaxy['source_ids'][i])
+    did = str(galaxy['dest_ids'][i])
+    if sid not in coords:
+        name = systems.data.get(sid, {'title': 'Unknown'})['title']
+        eprint(f"{bcolors.WARNING}WARNING:{bcolors.ENDC} Coordinates not found for system {sid} ({name})")
+        continue
+    if did not in coords:
+        name = systems.data.get(did, {'title': 'Unknown'})['title']
+        eprint(f"{bcolors.WARNING}WARNING:{bcolors.ENDC} Coordinates not found for system {did} ({name})")
+        continue
     feature = {
         'type': 'Feature',
         'properties': {
-            'source':   systems.data.get(str(galaxy['source_ids'][i]), {'title': 'Unknown'})['title'],
-            'dest':     systems.data.get(str(galaxy['dest_ids'][i]), {'title': 'Unknown'})['title'],
+            'source':   systems.data.get(sid, {'title': 'Unknown'})['title'],
+            'dest':     systems.data.get(did, {'title': 'Unknown'})['title'],
             'distance': galaxy['distances'][i],
         },
         'geometry': {
             'type': 'LineString',
             'coordinates': [
-                coords[str(galaxy['source_ids'][i])],
-                coords[str(galaxy['dest_ids'][i])],
+                coords[sid],
+                coords[did],
             ],
         },
     }
