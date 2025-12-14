@@ -13,7 +13,16 @@ update:
 
 .PHONY: testing
 testing: public-html/geo.json
-	docker-compose up --build -d
+	docker run -dit --name stfc-map -p 8085:80 -v ./public-html:/usr/local/apache2/htdocs/map/ httpd:alpine
+
+.PHONY: stop
+stop:
+	docker stop stfc-map
+	docker rm stfc-map
+
+.PHONY: logs
+logs:
+	docker logs stfc-map
 
 public-html/geo.json: builder/geojson builder/galaxy_nodes_optimised.json builder/loca/systems.json builder/loca/factions.json builder/loca/resources.json builder/loca/mission_titles.json
 	cd builder && ./geojson >../public-html/geo.json
