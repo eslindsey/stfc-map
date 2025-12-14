@@ -111,6 +111,7 @@ eprint(f"Galaxy bounds: ({gb[0][0]}, {gb[0][1]})-({gb[1][0]}, {gb[1][1]})")
 # because we want to be able to style special warp paths (like toll roads)
 # and we can't do that if we draw another line directly above/below it.
 
+path_stats = {}
 path_map = {}
 # First, add all the toll roads
 for i in range(0, len(galaxy['source_ids'])):
@@ -119,20 +120,29 @@ for i in range(0, len(galaxy['source_ids'])):
     sys1 = str(galaxy['source_ids'][i])
     sys2 = str(galaxy['dest_ids'][i])
     # Enforce a guaranteed order so we can find the path the other way
-    if sys1 < sys2:
+    if sys2 < sys1:
         sys1, sys2 = sys2, sys1
     k = f"{sys1}-{sys2}"
+    path_stats[k] = path_stats[k] + 1 if k in path_stats else 1
     path_map[k] = i
 # Next, add the remaining paths if they're not already drawn
 for i in range(0, len(galaxy['source_ids'])):
     sys1 = str(galaxy['source_ids'][i])
     sys2 = str(galaxy['dest_ids'][i])
-    if sys1 < sys2:
+    if sys2 < sys1:
         sys1, sys2 = sys2, sys1
     k = f"{sys1}-{sys2}"
+    path_stats[k] = path_stats[k] + 1 if k in path_stats else 1
     if k in path_map:
         continue
     path_map[k] = i
+
+path_totals = {}
+for k in path_stats:
+    v = str(path_stats[k])
+    path_totals[v] = path_totals[v] + 1 if v in path_totals else 1
+
+eprint(f"{bcolors.OKCYAN}Path totals:{bcolors.ENDC} {path_totals}")
 
 # Now produce our output using only single paths
 counts = {

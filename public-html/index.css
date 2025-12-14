@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
 	height: 100%;
 	overflow: hidden;
+	font-family: "Exo", sans-serif;
 }
 
 #map {
@@ -57,6 +60,7 @@ body {
 	position: absolute;
 	left: 78px;
 	top: 2px;
+	font-weight: 200;
 }
 
 .id {
