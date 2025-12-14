@@ -3,7 +3,6 @@
 body {
 	height: 100%;
 	overflow: hidden;
-	font-family: "Exo", sans-serif;
 }
 
 #map {
@@ -47,6 +46,10 @@ body {
 	top: 40px;
 	width: 400px;
 	height: 226px;
+	font-family: "Exo", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .faction {
@@ -60,7 +63,6 @@ body {
 	position: absolute;
 	left: 78px;
 	top: 2px;
-	font-weight: 200;
 }
 
 .id {
