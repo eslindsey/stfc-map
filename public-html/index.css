@@ -99,6 +99,10 @@ body {
 	background-color: #1c2f38;
 	color: #ffffff;
 	border: 1px solid #ffffff;
+	font-family: "Exo", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .toll .cost {
