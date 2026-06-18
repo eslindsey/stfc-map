@@ -15,6 +15,11 @@ body {
 	height: 100%;
 }
 
+.legend {
+	background: white;
+	border: 1px solid black;
+}
+
 .system-label {
 	opacity: 1.0 !important;
 	border: none !important;

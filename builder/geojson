@@ -33,6 +33,34 @@ obj = {
     'features': []
 }
 
+####################
+#                  #
+#   HOUSEKEEPING   #
+#                  #
+####################
+
+warp, warp_low, warp_high = {}, 1, 0
+hostile_summary = json.load(open('hostile_summary.json', 'r'))
+eprint(f"{bcolors.OKGREEN}DEBUG:{bcolors.ENDC} First hostile_summary result:\n{hostile_summary[1]}")
+for h in hostile_summary:
+    h_warpn = h['warp']
+    h_warps = h['warp_with_superhighway']
+    for s in h['systems']:
+        s_warpn, s_warps = 0, 0
+        #if s in warp:
+        #    s_warpn = warp[s]['warp']
+        #    s_warps = warp[s]['warp_with_superhighway']
+        #    if s_warpn != h_warpn:
+        #        eprint(f"{bcolors.WARNING}WARNING:{bcolors.ENDC} Warp already found for {s}, and {h_warpn} != {s_warpn}")
+        #        continue
+        #    if s_warps != h_warps:
+        #        eprint(f"{bcolors.WARNING}WARNING:{bcolors.ENDC} Warp with superhighway already found for {s}, and {h_warps} != {s_warps}")
+        #        continue
+        warp[s] = {'warp': h_warpn, 'warp_with_superhighway': h_warps}
+        warp_low = min(h_warpn, s_warpn)
+        warp_high = max(h_warps, s_warps)
+eprint(f"{bcolors.OKCYAN}INFO:{bcolors.ENDC} Warp ranges found from {warp_low} to {warp_high} for {len(warp)} systems")
+
 #############
 #           #
 #   NODES   #
@@ -61,6 +89,7 @@ for i in range(0, len(galaxy['node_ids'])):
 
     name = systems.data.get(node, {'title': 'Unknown'})['title']
 
+    # Faction name/symbols
     fs = []
     for fid in fids:
         f = "Unknown"
